@@ -1,0 +1,244 @@
+Assignment 2 
+
+1. Write a program to check whether a number is prime or not. 
+
+-->
+
+#include<iostream>
+using namespace std;
+bool isPrime(int n)
+{
+    if(n<=1)
+    {
+        return false;
+    }
+
+    for( int i=2; i*i <=n; i++)
+    {
+        if(n%i==0)
+        {
+            return false;
+        }
+    }
+}
+int main()
+{
+
+    int n;
+    cout<<"Enter the number: ";
+    cin>>n;
+
+if (isPrime(n))
+        cout << n << " is a prime number." << endl;
+    else
+        cout << n << " is not a prime number." << endl;
+
+    return 0;
+}
+
+output:-
+
+Enter the number: 53
+53 is a prime number.
+
+
+2. Write a program to generate first N prime numbers. Accept N from user. 
+
+-->
+
+#include <iostream>
+using namespace std;
+
+bool isPrime(int n) {
+    if (n <= 1) 
+        return false;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int main() {
+    int N;
+    
+
+    cout << "Enter the number N: ";
+    cin >> N;
+
+    
+    cout << "Prime numbers between 2 and " << N << " are: ";
+    for (int num = 2; num <= N; num++) {
+        if (isPrime(num)) {
+            cout << num << " ";  
+        }
+    }
+
+    cout << endl;
+    return 0;
+}
+
+output:-
+
+Enter the number N: 53
+Prime numbers between 2 and 53 are: 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53
+
+
+3. Write a program to generate following pyramid
+A
+AB
+ABC
+..... A..............Z
+
+-->
+#include <iostream>
+using namespace std;
+
+int main() {
+    char ch = 'A';  
+    
+    for (char i = 'A'; i <= 'Z'; i++) {
+        for (char j = 'A'; j <= i; j++) {
+            cout << j;  
+        }
+        cout << endl;  
+    }
+
+    return 0;
+}
+
+output:-
+
+A
+AB
+ABC
+ABCD
+ABCDE
+ABCDEF
+ABCDEFG
+ABCDEFGH
+ABCDEFGHI
+ABCDEFGHIJ
+ABCDEFGHIJK
+ABCDEFGHIJKL
+ABCDEFGHIJKLM
+ABCDEFGHIJKLMN
+ABCDEFGHIJKLMNO
+ABCDEFGHIJKLMNOP
+ABCDEFGHIJKLMNOPQ
+ABCDEFGHIJKLMNOPQR
+ABCDEFGHIJKLMNOPQRS
+ABCDEFGHIJKLMNOPQRST
+ABCDEFGHIJKLMNOPQRSTU
+ABCDEFGHIJKLMNOPQRSTUV
+ABCDEFGHIJKLMNOPQRSTUVW
+ABCDEFGHIJKLMNOPQRSTUVWX
+ABCDEFGHIJKLMNOPQRSTUVWXY
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+
+
+4. Write a menu driven program to perform mathematical operations on two numbers. 
+1. Add
+2. Sub
+3. Mul
+4. Div
+5. Exit
+accept the menu option and numbers form user. 
+
+-->
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int choice;
+    double num1, num2;
+
+    do {
+        
+        cout << "Menu:\n";
+        cout << "1. Add\n";
+        cout << "2. Subtract\n";
+        cout << "3. Multiply\n";
+        cout << "4. Divide\n";
+        cout << "5. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        if (choice >= 1 && choice <= 4) {
+            cout << "Enter two numbers: ";
+            cin >> num1 >> num2;
+        }
+
+        switch (choice) {
+            case 1:
+                cout << "Result: " << num1 + num2 << endl;
+                break;
+            case 2:
+                cout << "Result: " << num1 - num2 << endl;
+                break;
+            case 3:
+                cout << "Result: " << num1 * num2 << endl;
+                break;
+            case 4:
+                if (num2 != 0) {
+                    cout << "Result: " << num1 / num2 << endl;
+                } else {
+                    cout << "Division by zero is not allowed!" << endl;
+                }
+                break;
+            case 5:
+                cout << "Exiting the program." << endl;
+                break;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
+    } while (choice != 5);
+
+    return 0;
+}
+
+output:-
+
+1. Add
+2. Subtract
+3. Multiply
+4. Divide
+5. Exit
+Enter your choice: 3
+Enter two numbers: 4 6
+Result: 24
+
+5. Generate following pyramid , accept the level from the user as input
+1
+1 2
+1 2 3
+..... 1................N
+ where N is the level accepted as input
+
+-->
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cout<<"Enter the number";
+    cin>>n;
+    for(int i=1;i<n;i++)
+    {
+        for(int j=1; j<=i; j++)
+        {
+            
+            cout<<j;
+        }
+        cout<<endl;
+    }
+}
+
+output:-
+Enter the number5
+1
+12
+123
+1234
